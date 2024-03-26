@@ -1,3 +1,4 @@
+
 const express = require('express');
 const animalController = require('../controllers/animalController');
 
@@ -10,10 +11,10 @@ router.get('/', animalController.getAllAnimals);
 router.get('/:id', animalController.getAnimalById);
 
 // Route pour créer un nouvel animal
-router.post('/', animalController.createAnimal);
+router.post('/', animalController.addAnimal);
 
 // Route pour mettre à jour un animal existant
-router.put('/:id', animalController.updateAnimal);
+router.put('/:id', animalController.editAnimal);
 
 // Route pour supprimer un animal
 router.delete('/:id', animalController.deleteAnimal);
