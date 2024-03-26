@@ -13,6 +13,10 @@ app.use(cors());
 app.use('/animal', animalRoute);
 
 
+<<<<<<< Updated upstream
+=======
+app.use('/getall', user);
+>>>>>>> Stashed changes
 
 
 app.listen(8000, function () {
