@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const db = require("./database/database.js");
+const db = require("./databases/database.js");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 
