@@ -10,14 +10,13 @@ import Footer from './components/Footer';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
   return (
-    <div className="container ">
+    <div className=" ">
             <>
               <div className="col-12 p-0 ">
                 <Header  />
               </div>
               <div
                 className="col p-0 bg-color-blue-in"
-                style={{ overflow: "auto", height: "100vh" }}
               >
                 <Routes>
                   <Route path="/accueil" element={<Accueil />} />
