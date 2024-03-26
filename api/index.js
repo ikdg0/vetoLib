@@ -8,6 +8,7 @@ const animalRoute = require('./routes/animalRoute');
 
 app.use(express.json());
 app.use(cors());
+
 app.use('/animal', animalRoute);
 
 
