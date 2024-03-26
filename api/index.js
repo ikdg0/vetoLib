@@ -5,10 +5,13 @@ const cors = require("cors");
 const bcrypt = require("bcrypt");
 const animalRoute = require('./routes/animalRoute');
 
+//const cabinetRoute = require('./routes/cabinetRoute');
+
 
 app.use(express.json());
 app.use(cors());
 app.use('/animal', animalRoute);
+
 
 
 
