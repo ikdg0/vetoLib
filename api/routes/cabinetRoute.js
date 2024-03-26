@@ -5,10 +5,10 @@ const cabinetController = require('../controllers/cabinetController');
 //const { authenticator } = require('../middlewares/middlewareCorrAdmin');
 
 // Routes pour la table commentaire
-router.get('/getAll', /* authenticator,*/ cabinetController.getAllCommentaires);
-router.get('/get/:id', /* authenticator,*/ cabinetController.getCommentaire);
-router.post('/add', /* authenticator,*/ cabinetController.addCommentaire);
-router.put('/edit/:id',/* authenticator,*/ cabinetController.EditCommentaire);
-router.delete('/delete/:id', /* authenticator,*/ cabinetController.DeleteCommentaire); 
+router.get('/cabinet', /* authenticator,*/ cabinetController.getAllCabinets);
+router.get('/cabinet/:id', /* authenticator,*/ cabinetController.getCabinet);
+router.post('/cabinet', /* authenticator,*/ cabinetController.addCabinet);
+router.put('/cabinet/:id',/* authenticator,*/ cabinetController.editCabinet);
+router.delete('/cabinet/:id', /* authenticator,*/ cabinetController.deleteCabinet); 
 
 module.exports = router;
