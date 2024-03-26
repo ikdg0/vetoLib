@@ -9,6 +9,7 @@ const cabinetRoute = require('./routes/cabinetRoute');
 
 app.use(express.json());
 app.use(cors());
+
 app.use('/animal', animalRoute);
 app.use('/cabinet',cabinetRoute);
 
