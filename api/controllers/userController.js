@@ -31,6 +31,7 @@ exports.getUserById = async (req, res) => {
 
     try {
         const resultat = await db.query("SELECT * FROM User WHERE user_id = ?", [id]);
+        console.log(resultat)
         if (resultat.length > 0) {
             res.status(200).json(resultat[0]);
         } else {

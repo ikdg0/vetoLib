@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/animal', animalRoute);
 
-app.use('/getall', user);
+app.use('/user', user);
 
 
 
