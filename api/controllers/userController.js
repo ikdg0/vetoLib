@@ -70,3 +70,37 @@ exports.deleteUser = async (req, res) => {
         res.status(500).json({ message: "Erreur lors de la suppression de l'utilisateur", error });
     }
 };
+
+exports.login = async (req, res) => {
+    try {
+        // vérifier l'email de l'utilisateur => récupérer le mdp
+        const { email, password } = req.body
+        const result = await db.query('select * from user where email = ?', [email])
+        if (result.length == 0) {
+            return res.status(401).json({ error: "utilisateur non existant" })
+        }
+        const user = result[0];
+        // comparaison du mdp avec le mdp hasher en bdd avec bcrypt
+        const SamePwd = await bcrypt.compare(password, user.password)
+        if (!SamePwd) {
+            return res.status(401).json({ error: "mdp incorrect" })
+        }
+        // renvoie jwt token pour la signature
+        const token = jwt.sign({ email }, process.env.SECRET_KEY, { expiresIn: '1h' });
+
+        // Verfifier si l'utilisateur est admin
+        if (user.role == "admin") {
+            const result = await db.query('select * from user');
+            //const technologies = await db.query('select * from technologie');
+            //res.json({token : token, result : result, technologies : technologies})
+            res.render('user', { user: result, token: token });
+        } else {
+            res.json({ token: token, result: result })
+            res.render('Oneutilisateur', { user: user, token: token });
+        }
+
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Erreur serveur" });
+    }
+}
