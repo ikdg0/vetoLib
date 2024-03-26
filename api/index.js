@@ -4,7 +4,7 @@ const db = require("./databases/database");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const animalRoute = require('./routes/animalRoute');
-
+const user = require("./routes/userRoute.js")
 //const cabinetRoute = require('./routes/cabinetRoute');
 
 
@@ -12,11 +12,8 @@ app.use(express.json());
 app.use(cors());
 app.use('/animal', animalRoute);
 
-
-<<<<<<< Updated upstream
-=======
 app.use('/getall', user);
->>>>>>> Stashed changes
+
 
 
 app.listen(8000, function () {
