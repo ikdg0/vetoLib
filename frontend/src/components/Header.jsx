@@ -26,6 +26,12 @@ const Header = () => {
             <Nav.Link eventKey={2} href="/connexion">
               <Button className="btn-primary">
               Connexion
+          <NavLink to="/insciption">
+            <button type="button" className="btn btn-outline-success me-2">
+              Inscription
+            </button>
+          </NavLink>
+
               </Button>
             </Nav.Link>
           </Nav>
