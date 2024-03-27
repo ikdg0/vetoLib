@@ -10,6 +10,7 @@ const user = require("./routes/userRoute.js")
 
 app.use(express.json());
 app.use(cors());
+
 app.use('/animal', animalRoute);
 
 app.use('/user', user);
