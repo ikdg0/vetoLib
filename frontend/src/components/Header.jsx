@@ -63,13 +63,14 @@ const Header = () => {
               Connexion
             </button>
           </NavLink>
-
-          <button type="button" className="btn btn-success">
-            Inscription
-          </button>
+          <NavLink to="/insciption">
+            <button type="button" className="btn btn-outline-success me-2">
+              Inscription
+            </button>
+          </NavLink>
         </div>
-      </header>
-    </div>
+      </header >
+    </div >
   );
 };
 
