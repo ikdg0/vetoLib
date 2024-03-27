@@ -5,7 +5,9 @@ import { Routes, Route } from 'react-router-dom';
 import '../public/styles/style.css';
 import Connexion from './pages/connexion';
 import Footer from './components/Footer';
-
+import Animal from './pages/animal/animal';
+import AnimaList from './pages/animal/animalist';
+import DetAnimal from './pages/animal/detanimal';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(true)
@@ -21,6 +23,9 @@ function App() {
                 <Routes>
                   <Route path="/accueil" element={<Accueil />} />
                   <Route path="/connexion" element={<Connexion />} />
+                  <Route path="/animal" element={<Animal />} />
+                  <Route path="/animalist" element={<AnimaList />} />
+                  <Route path="/detanimal" element={<DetAnimal />} />
                 </Routes>
               </div>
             </>
