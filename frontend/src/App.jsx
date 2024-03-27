@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import Accueil from './pages/accueil'
 import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import '../public/styles/style.css';
 import Connexion from './pages/connexion';
 import Footer from './components/Footer';
+import Accueil from './pages/accueil/accueil';
+import Rdv from './pages/rdv/rdv';
 
 
 function App() {
@@ -12,20 +13,22 @@ function App() {
   return (
     <div className=" ">
             <>
-              <div className="col-12 p-0 ">
+              <div className="my-4 pt-4 container-fluid">
                 <Header  />
               </div>
               <div
-                className="col p-0 bg-color-blue-in"
+                className=""
               >
                 <Routes>
-                  <Route path="/accueil" element={<Accueil />} />
+                <Route path="/" element={<Accueil />} />
+                  <Route path="/accueil" element={<Accueil/>} />
                   <Route path="/connexion" element={<Connexion />} />
+                  <Route path="/rdv" element={<Rdv />} />
                 </Routes>
               </div>
             </>
          
-            <div>
+            <div className='mt-5'>
               <Footer />
             </div>
         </div>
