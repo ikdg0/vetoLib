@@ -38,7 +38,7 @@ exports.editCabinet = async (req, res) => {
     const cabinet_id = req.params.id;
     const {  cabinet_name, owner_id, address, city, phone_number,image, is_available } = req.body;
     try {
-        await db.query("UPDATE cabinet SET cabinet_name = ?, owner_id = ?, address = ?, city = ?, phone_number = ?,image = ?, is_available = ? WHERE cabinet_id = ?", [cabinet_name, owner_id, address, city, phone_number, image, is_available, cabinet_id]);
+        await db.query("UPDATE cabinet SET cabinet_name = ?, owner_id = ?, address = ?, city = ?, phone_number = ?,image = ?, is_available = ? WHERE cabinet_id = ?", [cabinet_name, owner_id, address, city, phone_number, image,  is_available, cabinet_id]);
         res.status(200).json({ message: 'Cabinet mis à jour avec succès'});
     } catch (error) {
         res.status(500).json({ message: "Erreur lors de la mise à jour du cabinet", error });
