@@ -90,7 +90,6 @@ const Inscription = () => {
                                     required
                                 >
                                     <option value="user">Utilisateur</option>
-                                    <option value="admin">Administrateur</option>
                                     <option value="propriétaire">Propriétaire</option>
                                 </select>
                             </div>

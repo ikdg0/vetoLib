@@ -1,7 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const Header = () => {
+
+
+
+const Header = ({ isLoggedIn }) => {
   return (
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -56,22 +59,24 @@ const Header = () => {
             </a>
           </li>
         </ul>
+        {!isLoggedIn && (
+          <div className="col-md-3 text-end">
+            <NavLink to="/connexion">
+              <button type="button" className="btn btn-outline-success me-2">
+                Connexion
+              </button>
+            </NavLink>
+            <NavLink to="/insciption">
+              <button type="button" className="btn btn-outline-success me-2">
+                Inscription
+              </button>
+            </NavLink>
+          </div>
+        )}
 
-        <div className="col-md-3 text-end">
-          <NavLink to="/connexion">
-            <button type="button" className="btn btn-outline-success me-2">
-              Connexion
-            </button>
-          </NavLink>
-          <NavLink to="/insciption">
-            <button type="button" className="btn btn-outline-success me-2">
-              Inscription
-            </button>
-          </NavLink>
-        </div>
       </header >
     </div >
   );
 };
 
-export default Header;
+export default Header

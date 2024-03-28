@@ -21,6 +21,7 @@ function App() {
         >
           <Routes>
             <Route path="/accueil" element={<Accueil />} />
+
             <Route path="/connexion" element={<Connexion />} />
             <Route path="/insciption" element={<Inscription />} />
 
