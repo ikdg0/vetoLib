@@ -10,9 +10,9 @@ exports.getAllCabinets = async (req, res) => {
 };
 
 exports.addCabinet = async (req, res) => {
-    const { cabinet_name, owner_id, address, city, phone_number,image, is_available } = req.body;
+    const { cabinet_name, owner_id, address, city, phone_number,description,image, is_available } = req.body;
     try {
-        await db.query("INSERT INTO cabinet (cabinet_name, owner_id, address, city, phone_number,image, is_available ) VALUES (?,?,?,?,?,?,?)", [cabinet_name, owner_id, address, city, phone_number,image, is_available]);
+        await db.query("INSERT INTO cabinet (cabinet_name, owner_id, address, city, phone_number,description,image, is_available ) VALUES (?,?,?,?,?,?,?,?)", [cabinet_name, owner_id, address, city, phone_number,description,image, is_available]);
         res.status(201).json({ message: 'Cabinet ajouté avec succès' });
     } catch (error) {
         res.status(500).json({ message: "Erreur lors de l'ajout du cabinet", error });
@@ -36,9 +36,9 @@ exports.getCabinet = async (req, res) => {
 
 exports.editCabinet = async (req, res) => {
     const cabinet_id = req.params.id;
-    const {  cabinet_name, owner_id, address, city, phone_number,image, is_available } = req.body;
+    const {  cabinet_name, owner_id, address, city, phone_number,description,image, is_available } = req.body;
     try {
-        await db.query("UPDATE cabinet SET cabinet_name = ?, owner_id = ?, address = ?, city = ?, phone_number = ?,image = ?, is_available = ? WHERE cabinet_id = ?", [cabinet_name, owner_id, address, city, phone_number, image,  is_available, cabinet_id]);
+        await db.query("UPDATE cabinet SET cabinet_name = ?, owner_id = ?, address = ?, city = ?, phone_number = ?,description = ?,image = ?, is_available = ? WHERE cabinet_id = ?", [cabinet_name, owner_id, address, city, phone_number,description, image,  is_available, cabinet_id]);
         res.status(200).json({ message: 'Cabinet mis à jour avec succès'});
     } catch (error) {
         res.status(500).json({ message: "Erreur lors de la mise à jour du cabinet", error });

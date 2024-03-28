@@ -33,7 +33,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="/cabinet"
               className="nav-link px-2 pe-3 ps-3 text-primary fw-semibold"
             >
               Cabinet
